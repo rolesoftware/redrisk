@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @action_plan.title %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%= @action_plan.kind %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @action_plan.description %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%= @action_plan.assigned_to %>
+</p>
+
+<p>
+  <b>Term:</b>
+  <%= @action_plan.term %>
+</p>
+
+<p>
+  <b>Finish date:</b>
+  <%= @action_plan.finish_date %>
+</p>
+
+<p>
+  <b>Risk:</b>
+  <%= @action_plan.risk_id %>
+</p>
+
+<p>
+  <b>Effective:</b>
+  <%= @action_plan.effective %>
+</p>
+
+
+<%= link_to 'Edit', edit_action_plan_path(@action_plan) %> |
+<%= link_to 'Back', action_plans_path %>

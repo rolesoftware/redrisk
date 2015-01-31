@@ -1,0 +1,49 @@
+<%= form_for(@action_plan) do |f| %>
+  <% if @action_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@action_plan.errors.count, "error") %> prohibited this action_plan from being saved:</h2>
+
+      <ul>
+      <% @action_plan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :kind %><br />
+    <%= f.number_field :kind %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :assigned_to %><br />
+    <%= f.number_field :assigned_to %>
+  </div>
+  <div class="field">
+    <%= f.label :term %><br />
+    <%= f.date_select :term %>
+  </div>
+  <div class="field">
+    <%= f.label :finish_date %><br />
+    <%= f.date_select :finish_date %>
+  </div>
+  <div class="field">
+    <%= f.label :risk_id %><br />
+    <%= f.number_field :risk_id %>
+  </div>
+  <div class="field">
+    <%= f.label :effective %><br />
+    <%= f.check_box :effective %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

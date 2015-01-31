@@ -1,0 +1,37 @@
+<h1>Listing action_plans</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Kind</th>
+    <th>Description</th>
+    <th>Assigned to</th>
+    <th>Term</th>
+    <th>Finish date</th>
+    <th>Risk</th>
+    <th>Effective</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @action_plans.each do |action_plan| %>
+  <tr>
+    <td><%= action_plan.title %></td>
+    <td><%= action_plan.kind %></td>
+    <td><%= action_plan.description %></td>
+    <td><%= action_plan.assigned_to %></td>
+    <td><%= action_plan.term %></td>
+    <td><%= action_plan.finish_date %></td>
+    <td><%= action_plan.risk_id %></td>
+    <td><%= action_plan.effective %></td>
+    <td><%= link_to 'Show', action_plan %></td>
+    <td><%= link_to 'Edit', edit_action_plan_path(action_plan) %></td>
+    <td><%= link_to 'Destroy', action_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Action plan', new_action_plan_path %>
