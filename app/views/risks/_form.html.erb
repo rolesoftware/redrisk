@@ -1,0 +1,85 @@
+<%= form_for(@risk) do |f| %>
+  <% if @risk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@risk.errors.count, "error") %> prohibited this risk from being saved:</h2>
+
+      <ul>
+      <% @risk.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :source %><br />
+    <%= f.number_field :source %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.number_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :identification_date %><br />
+    <%= f.date_select :identification_date %>
+  </div>
+  <div class="field">
+    <%= f.label :created_by %><br />
+    <%= f.number_field :created_by %>
+  </div>
+  <div class="field">
+    <%= f.label :assigned_to %><br />
+    <%= f.number_field :assigned_to %>
+  </div>
+  <div class="field">
+    <%= f.label :probability %><br />
+    <%= f.number_field :probability %>
+  </div>
+  <div class="field">
+    <%= f.label :impact %><br />
+    <%= f.number_field :impact %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= f.number_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :trigger %><br />
+    <%= f.text_area :trigger %>
+  </div>
+  <div class="field">
+    <%= f.label :strategy %><br />
+    <%= f.number_field :strategy %>
+  </div>
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.number_field :project_id %>
+  </div>
+  <div class="field">
+    <%= f.label :origin %><br />
+    <%= f.number_field :origin %>
+  </div>
+  <div class="field">
+    <%= f.label :effort %><br />
+    <%= f.text_field :effort %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

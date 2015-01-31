@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @risk.title %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @risk.status %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @risk.description %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @risk.source %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @risk.category %>
+</p>
+
+<p>
+  <b>Identification date:</b>
+  <%= @risk.identification_date %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @risk.created_by %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%= @risk.assigned_to %>
+</p>
+
+<p>
+  <b>Probability:</b>
+  <%= @risk.probability %>
+</p>
+
+<p>
+  <b>Impact:</b>
+  <%= @risk.impact %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @risk.priority %>
+</p>
+
+<p>
+  <b>Trigger:</b>
+  <%= @risk.trigger %>
+</p>
+
+<p>
+  <b>Strategy:</b>
+  <%= @risk.strategy %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @risk.project_id %>
+</p>
+
+<p>
+  <b>Origin:</b>
+  <%= @risk.origin %>
+</p>
+
+<p>
+  <b>Effort:</b>
+  <%= @risk.effort %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @risk.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_risk_path(@risk) %> |
+<%= link_to 'Back', risks_path %>
