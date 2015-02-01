@@ -1,55 +1,33 @@
+<div class="contextual">
+  <%= link_to t('.new_risk'), new_risk_path, :class => 'icon icon-add' %>
+</div>
+
 <h1>Listing risks</h1>
 
-<table>
+<div class="autoscroll">
+<table class="list issues">
   <tr>
+    <th>#</th>
     <th>Title</th>
     <th>Status</th>
-    <th>Description</th>
-    <th>Source</th>
-    <th>Category</th>
     <th>Identification date</th>
-    <th>Created by</th>
-    <th>Assigned to</th>
-    <th>Probability</th>
-    <th>Impact</th>
     <th>Priority</th>
-    <th>Trigger</th>
-    <th>Strategy</th>
-    <th>Project</th>
-    <th>Origin</th>
-    <th>Effort</th>
-    <th>Cost</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @risks.each do |risk| %>
   <tr>
+    <td><%= link_to risk.id, show_risk_path(risk_id: risk.id) %></td>
     <td><%= risk.title %></td>
     <td><%= risk.status %></td>
-    <td><%= risk.description %></td>
-    <td><%= risk.source %></td>
-    <td><%= risk.category %></td>
     <td><%= risk.identification_date %></td>
-    <td><%= risk.created_by %></td>
-    <td><%= risk.assigned_to %></td>
-    <td><%= risk.probability %></td>
-    <td><%= risk.impact %></td>
     <td><%= risk.priority %></td>
-    <td><%= risk.trigger %></td>
-    <td><%= risk.strategy %></td>
-    <td><%= risk.project_id %></td>
-    <td><%= risk.origin %></td>
-    <td><%= risk.effort %></td>
-    <td><%= risk.cost %></td>
-    <td><%= link_to 'Show', show_risk_path(risk_id: risk.id) %></td>
-    <td><%= link_to 'Edit', edit_risk_path(risk_id: risk.id) %></td>
-    <td><%= link_to 'Destroy', destroy_risk_path(risk_id: risk.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_risk_path(risk_id: risk.id), class: 'icon icon-edit' %></td>
+    <td><%= link_to 'Destroy', destroy_risk_path(risk_id: risk.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %></td>
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
-
-<%= link_to 'New Risk', new_risk_path %>

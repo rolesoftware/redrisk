@@ -1,5 +1,8 @@
+<div class="contextual">
+  <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
+</div>
+
 <h1>New risk</h1>
 
 <%= render 'new_form' %>
 
-<%= link_to 'Back', risks_path %>

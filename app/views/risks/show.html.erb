@@ -1,90 +1,79 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @risk.title %>
-</p>
+<div class="contextual">
+  <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
+  <%= link_to t('edit'), edit_risk_path(risk_id: @risk.id), :class => 'icon icon-edit' %>
+  <%= link_to t('Destroy'), destroy_risk_path(risk_id: @risk.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %>
+</div>
 
-<p>
-  <b>Status:</b>
-  <%= @risk.status %>
-</p>
+<h2>
+  <%=t('risk') %> #<%= @risk.id %>
+</h2>
 
-<p>
-  <b>Description:</b>
-  <%= @risk.description %>
-</p>
+<div class="issue">
+  <div class="subject">
+    <h3>Title:
+      <%= @risk.title %>
+    </h3>
+  </div>
+  <br />
 
-<p>
-  <b>Source:</b>
-  <%= @risk.source %>
-</p>
+  <table class="attributes">
+    <tr>
+      <th>Status:</th>
+      <td><%= @risk.status %></td>
+      <th>Effort:</th>
+      <td><%= @risk.effort %></td>
+    </tr>
 
-<p>
-  <b>Category:</b>
-  <%= @risk.category %>
-</p>
+    <tr>
+      <th>Origin:</th>
+      <td><%= @risk.origin %></td>
+      <th>Cost:</th>
+      <td><%= @risk.cost %></td>
+    </tr>
 
-<p>
-  <b>Identification date:</b>
-  <%= @risk.identification_date %>
-</p>
+    <tr>
+      <th>Description:</th>
+      <td><%= @risk.description %></td>
+    </tr>
 
-<p>
-  <b>Created by:</b>
-  <%= @risk.created_by %>
-</p>
+    <tr>
+      <th>Source:</th>
+      <td><%= @risk.source %></td>
+      <th>Identification date:</th>
+      <td><%= @risk.identification_date %></td>
+    </tr>
 
-<p>
-  <b>Assigned to:</b>
-  <%= @risk.assigned_to %>
-</p>
+    <tr>
+      <th>Category:</th>
+      <td><%= @risk.category %></td>
+      <th>Created by:</th>
+      <td><%= @risk.created_by %></td>
+    </tr>
 
-<p>
-  <b>Probability:</b>
-  <%= @risk.probability %>
-</p>
+    <tr>
+      <th>Probability:</th>
+      <td><%= @risk.probability %></td>
+      <th>Assigned to:</th>
+      <td><%= @risk.assigned_to %></td>
+    </tr>
 
-<p>
-  <b>Impact:</b>
-  <%= @risk.impact %>
-</p>
+    <tr>
+      <th>Impact:</th>
+      <td><%= @risk.impact %></td>
+      <th>Strategy:</th>
+      <td><%= @risk.strategy %></td>
+    </tr>
 
-<p>
-  <b>Priority:</b>
-  <%= @risk.priority %>
-</p>
+    <tr>
+      <th>Priority:</th>
+      <td><%= @risk.priority %></td>
+    </tr>
 
-<p>
-  <b>Trigger:</b>
-  <%= @risk.trigger %>
-</p>
-
-<p>
-  <b>Strategy:</b>
-  <%= @risk.strategy %>
-</p>
-
-<p>
-  <b>Project:</b>
-  <%= @risk.project_id %>
-</p>
-
-<p>
-  <b>Origin:</b>
-  <%= @risk.origin %>
-</p>
-
-<p>
-  <b>Effort:</b>
-  <%= @risk.effort %>
-</p>
-
-<p>
-  <b>Cost:</b>
-  <%= @risk.cost %>
-</p>
-
-
-<%= link_to 'Edit', edit_risk_path(risk_id: @risk.id) %> |
-<%= link_to 'Back', risks_path %>
+    <tr>
+      <th>Trigger:</th>
+      <td><%= @risk.trigger %></td>
+    </tr>
+  </table>
+</div>
