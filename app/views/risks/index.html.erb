@@ -43,9 +43,9 @@
     <td><%= risk.origin %></td>
     <td><%= risk.effort %></td>
     <td><%= risk.cost %></td>
-    <td><%= link_to 'Show', risk %></td>
-    <td><%= link_to 'Edit', edit_risk_path(risk) %></td>
-    <td><%= link_to 'Destroy', risk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', show_risk_path(risk_id: risk.id) %></td>
+    <td><%= link_to 'Edit', edit_risk_path(risk_id: risk.id) %></td>
+    <td><%= link_to 'Destroy', destroy_risk_path(risk_id: risk.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

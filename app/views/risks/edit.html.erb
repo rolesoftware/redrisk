@@ -1,6 +1,6 @@
 <h1>Editing risk</h1>
 
-<%= render 'form' %>
+<%= render 'edit_form' %>
 
-<%= link_to 'Show', @risk %> |
+<%= link_to 'Show', show_risk_path(risk_id: @risk.id) %> |
 <%= link_to 'Back', risks_path %>

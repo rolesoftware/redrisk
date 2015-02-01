@@ -1,4 +1,4 @@
-<%= form_for(@risk) do |f| %>
+<%= form_for(@risk, url: create_risk_path) do |f| %>
   <% if @risk.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@risk.errors.count, "error") %> prohibited this risk from being saved:</h2>

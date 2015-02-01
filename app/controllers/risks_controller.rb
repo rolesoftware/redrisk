@@ -1,6 +1,6 @@
 class RisksController < ApplicationController
-  # GET /risks
-  # GET /risks.json
+  before_filter :find_optional_project
+
   def index
     @risks = Risk.all
 
@@ -10,10 +10,8 @@ class RisksController < ApplicationController
     end
   end
 
-  # GET /risks/1
-  # GET /risks/1.json
   def show
-    @risk = Risk.find(params[:id])
+    @risk = Risk.find(params[:risk_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,30 +19,25 @@ class RisksController < ApplicationController
     end
   end
 
-  # GET /risks/new
-  # GET /risks/new.json
   def new
     @risk = Risk.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @risk }
     end
   end
 
-  # GET /risks/1/edit
   def edit
-    @risk = Risk.find(params[:id])
+    @risk = Risk.find(params[:risk_id])
   end
 
-  # POST /risks
-  # POST /risks.json
   def create
     @risk = Risk.new(params[:risk])
 
     respond_to do |format|
       if @risk.save
-        format.html { redirect_to @risk, notice: 'Risk was successfully created.' }
+        format.html { redirect_to show_risk_path(risk_id: @risk.id), notice: 'Risk was successfully created.' }
         format.json { render json: @risk, status: :created, location: @risk }
       else
         format.html { render action: "new" }
@@ -53,14 +46,11 @@ class RisksController < ApplicationController
     end
   end
 
-  # PUT /risks/1
-  # PUT /risks/1.json
   def update
-    @risk = Risk.find(params[:id])
-
+    @risk = Risk.find(params[:risk_id])
     respond_to do |format|
       if @risk.update_attributes(params[:risk])
-        format.html { redirect_to @risk, notice: 'Risk was successfully updated.' }
+        format.html { redirect_to show_risk_path(risk_id: @risk.id), notice: 'Risk was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -69,15 +59,21 @@ class RisksController < ApplicationController
     end
   end
 
-  # DELETE /risks/1
-  # DELETE /risks/1.json
   def destroy
-    @risk = Risk.find(params[:id])
+    @risk = Risk.find(params[:risk_id])
     @risk.destroy
 
     respond_to do |format|
       format.html { redirect_to risks_url }
       format.json { head :no_content }
     end
+  end
+
+  def find_optional_project
+    return true unless params[:id]
+    @project = Project.find(params[:id])
+    authorize
+  rescue ActiveRecord::RecordNotFound
+    render_404
   end
 end
