@@ -1,9 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="contextual">
+  <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
+  <%= link_to t('edit'), edit_action_plan_path(action_plan_id: @action_plan.id), :class => 'icon icon-edit' %>
+  <%= link_to t('Destroy'), destroy_action_plan_path(action_plan_id: @action_plan.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @action_plan.title %>
-</p>
+<h2>
+  <%=t('action_plan') %> #<%= @action_plan.id %>
+</h2>
+
+<div class="issue">
+  <div class="subject">
+    <h3>Title:
+      <%= @action_plan.title %>
+    </h3>
+  </div>
+  <br />
 
 <p>
   <b>Kind:</b>
@@ -39,7 +50,4 @@
   <b>Effective:</b>
   <%= @action_plan.effective %>
 </p>
-
-
-<%= link_to 'Edit', edit_action_plan_path(@action_plan) %> |
-<%= link_to 'Back', action_plans_path %>
+</div>

@@ -1,6 +1,7 @@
+<div class="contextual">
+  <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
+</div>
+
 <h1>Editing action_plan</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @action_plan %> |
-<%= link_to 'Back', action_plans_path %>
+<%= render 'edit_form' %>

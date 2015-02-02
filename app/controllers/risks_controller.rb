@@ -3,6 +3,7 @@ class RisksController < ApplicationController
 
   def index
     @risks = Risk.all
+    @action_plans = ActionPlan.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,6 +13,7 @@ class RisksController < ApplicationController
 
   def show
     @risk = Risk.find(params[:risk_id])
+    @action_plans = ActionPlan.all
 
     respond_to do |format|
       format.html # show.html.erb

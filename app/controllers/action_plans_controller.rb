@@ -1,4 +1,7 @@
 class ActionPlansController < ApplicationController
+  before_filter :find_optional_project
+  menu_item :risks
+
   # GET /action_plans
   # GET /action_plans.json
   def index
@@ -13,7 +16,7 @@ class ActionPlansController < ApplicationController
   # GET /action_plans/1
   # GET /action_plans/1.json
   def show
-    @action_plan = ActionPlan.find(params[:id])
+    @action_plan = ActionPlan.find(params[:action_plan_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +37,7 @@ class ActionPlansController < ApplicationController
 
   # GET /action_plans/1/edit
   def edit
-    @action_plan = ActionPlan.find(params[:id])
+    @action_plan = ActionPlan.find(params[:action_plan_id])
   end
 
   # POST /action_plans
@@ -44,7 +47,7 @@ class ActionPlansController < ApplicationController
 
     respond_to do |format|
       if @action_plan.save
-        format.html { redirect_to @action_plan, notice: 'Action plan was successfully created.' }
+        format.html { redirect_to show_action_plan_url(action_plan_id: @action_plan.id), notice: 'Action plan was successfully created.' }
         format.json { render json: @action_plan, status: :created, location: @action_plan }
       else
         format.html { render action: "new" }
@@ -56,7 +59,7 @@ class ActionPlansController < ApplicationController
   # PUT /action_plans/1
   # PUT /action_plans/1.json
   def update
-    @action_plan = ActionPlan.find(params[:id])
+    @action_plan = ActionPlan.find(params[:action_plan_id])
 
     respond_to do |format|
       if @action_plan.update_attributes(params[:action_plan])
@@ -72,12 +75,20 @@ class ActionPlansController < ApplicationController
   # DELETE /action_plans/1
   # DELETE /action_plans/1.json
   def destroy
-    @action_plan = ActionPlan.find(params[:id])
+    @action_plan = ActionPlan.find(params[:action_plan_id])
     @action_plan.destroy
 
     respond_to do |format|
-      format.html { redirect_to action_plans_url }
+      format.html { redirect_to risks_path }
       format.json { head :no_content }
     end
+  end
+
+  def find_optional_project
+    return true unless params[:id]
+    @project = Project.find(params[:id])
+    #authorize
+  rescue ActiveRecord::RecordNotFound
+    render_404
   end
 end

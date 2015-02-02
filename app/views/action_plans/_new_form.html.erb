@@ -1,0 +1,53 @@
+<div class='box tabular new_issue'>
+  <%= form_for(@action_plan, url: create_action_plan_path(risk_id: params[:risk_id])) do |f| %>
+      <% if @action_plan.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@action_plan.errors.count, "error") %> prohibited this action_plan from being saved:</h2>
+
+            <ul>
+              <% @action_plan.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="splitcontentright">
+        <p>
+          <%= f.label :effective %>
+          <%= f.check_box :effective %>
+        </p>
+      </div>
+      <p>
+        <label for="action_plan_title"><%= ActionPlan.human_attribute_name :title %> <span class="required">*</span></label>
+        <%= f.text_field :title, :required => true %>
+      </p>
+      <p>
+        <%= f.label :kind %>
+        <%= f.number_field :kind %>
+      </p>
+      <p>
+        <%= f.label :description %>
+        <%= f.text_area :description, :class => 'wiki-edit', :rows => 10, :cols => 60 %>
+      </p>
+      <p>
+        <%= f.label :assigned_to %>
+        <%= f.number_field :assigned_to %>
+      </p>
+      <p>
+        <%= f.label :term %>
+        <%= f.date_select :term %>
+      </p>
+      <p>
+        <%= f.label :finish_date %>
+        <%= f.date_select :finish_date %>
+      </p>
+      <p>
+        <%= f.label :risk_id %>
+        <%= f.number_field :risk_id %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+  <% end %>
+</div>

@@ -76,4 +76,12 @@
       <td><%= @risk.trigger %></td>
     </tr>
   </table>
+  <hr />
+
+  <div class="contextual">
+    <%= link_to t('.new_action'), new_action_plan_path(risk_id: @risk.id), :class => 'icon icon-add' %>
+  </div>
+
+  <%= render :template => 'action_plans/index' %>
+
 </div>

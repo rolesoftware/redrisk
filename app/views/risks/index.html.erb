@@ -2,7 +2,7 @@
   <%= link_to t('.new_risk'), new_risk_path, :class => 'icon icon-add' %>
 </div>
 
-<h1>Listing risks</h1>
+<h2>Risks</h2>
 
 <div class="autoscroll">
 <table class="list issues">
@@ -31,3 +31,5 @@
 </div>
 
 <br />
+<hr />
+<%= render :template => 'action_plans/index' %>

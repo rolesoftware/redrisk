@@ -1,37 +1,31 @@
-<h1>Listing action_plans</h1>
+<h3>Actions</h3>
 
-<table>
+<table class="list issues">
   <tr>
+    <th>#</th>
     <th>Title</th>
     <th>Kind</th>
-    <th>Description</th>
     <th>Assigned to</th>
     <th>Term</th>
     <th>Finish date</th>
     <th>Risk</th>
-    <th>Effective</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @action_plans.each do |action_plan| %>
   <tr>
+    <td><%= link_to action_plan.id, show_action_plan_path(action_plan_id: action_plan.id) %></td>
     <td><%= action_plan.title %></td>
     <td><%= action_plan.kind %></td>
-    <td><%= action_plan.description %></td>
     <td><%= action_plan.assigned_to %></td>
     <td><%= action_plan.term %></td>
     <td><%= action_plan.finish_date %></td>
     <td><%= action_plan.risk_id %></td>
-    <td><%= action_plan.effective %></td>
-    <td><%= link_to 'Show', action_plan %></td>
-    <td><%= link_to 'Edit', edit_action_plan_path(action_plan) %></td>
-    <td><%= link_to 'Destroy', action_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_action_plan_path(action_plan_id: action_plan.id), class: 'icon icon-edit' %></td>
+    <td><%= link_to 'Destroy', destroy_action_plan_path(action_plan_id: action_plan.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Action plan', new_action_plan_path %>
