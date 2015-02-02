@@ -63,7 +63,7 @@ class ActionPlansController < ApplicationController
 
     respond_to do |format|
       if @action_plan.update_attributes(params[:action_plan])
-        format.html { redirect_to @action_plan, notice: 'Action plan was successfully updated.' }
+        format.html { redirect_to show_action_plan_url(action_plan_id: @action_plan.id), notice: 'Action plan was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
