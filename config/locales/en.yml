@@ -1,3 +1,11 @@
 # English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  risk:
+    status:
+      open: Open
+      closed: Closed
+      in_progress: In progress
+      suspended: Suspended
+      canceled: Canceled
+      rejected: Rejected
+      resolved: Resolved

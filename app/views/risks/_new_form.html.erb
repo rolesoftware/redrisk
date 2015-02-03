@@ -19,7 +19,7 @@
         </p>
         <p>
           <%= f.label :status %>
-          <%= f.number_field :status %>
+          <%= f.select(:status, options_for_select(options_for_status, @risk.status)) %>
         </p>
         <p>
           <%= f.label :origin %>
