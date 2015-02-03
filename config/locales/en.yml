@@ -1,6 +1,9 @@
 # English strings go here for Rails i18n
 en:
   risk:
+    origin:
+      project: Project
+      organizational: Organizational
     status:
       open: Open
       closed: Closed
@@ -9,3 +12,8 @@ en:
       canceled: Canceled
       rejected: Rejected
       resolved: Resolved
+    strategy:
+      eliminate: Eliminate
+      transfer: Transfer
+      mitigate: Mitigate
+      accept: Accept

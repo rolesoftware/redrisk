@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="contextual">
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
   <%= link_to t('edit'), edit_risk_path(risk_id: @risk.id), :class => 'icon icon-edit' %>
@@ -28,7 +26,7 @@
 
     <tr>
       <th>Origin:</th>
-      <td><%= @risk.origin %></td>
+      <td><%= @risk.to_origin %></td>
       <th>Cost:</th>
       <td><%= @risk.cost %></td>
     </tr>
@@ -63,7 +61,7 @@
       <th>Impact:</th>
       <td><%= @risk.impact %></td>
       <th>Strategy:</th>
-      <td><%= @risk.strategy %></td>
+      <td><%= @risk.to_strategy %></td>
     </tr>
 
     <tr>

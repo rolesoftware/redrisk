@@ -23,7 +23,7 @@
         </p>
         <p>
           <%= f.label :origin %>
-          <%= f.number_field :origin %>
+          <%= f.select(:origin, options_for_select(options_for_origin, @risk.origin)) %>
         </p>
       </div>
       <div class="splitcontentright">
@@ -77,7 +77,7 @@
         </p>
         <p>
           <%= f.label :strategy %>
-          <%= f.number_field :strategy %>
+          <%= f.select(:strategy, options_for_select(options_for_strategy, @risk.strategy)) %>
         </p>
       </div>
       <p>
