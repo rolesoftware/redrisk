@@ -69,11 +69,12 @@
         </p>
         <p>
           <%= f.label :created_by %>
-          <%= f.number_field :created_by %>
+          <%= text_field_tag '', User.current.name, readonly: true %>
+          <%= f.hidden_field :created_by, value: User.current.id %>
         </p>
         <p>
           <%= f.label :assigned_to %>
-          <%= f.number_field :assigned_to %>
+          <%= f.collection_select(:assigned_to, User.joins(:members).where("members.project_id = ?", @project.id), :id, :name, prompt: t('.select_one_member') ) %>
         </p>
         <p>
           <%= f.label :strategy %>

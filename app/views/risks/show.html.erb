@@ -47,14 +47,14 @@
       <th>Category:</th>
       <td><%= @risk.category %></td>
       <th>Created by:</th>
-      <td><%= @risk.created_by %></td>
+      <td><%= User.find(@risk.created_by).name unless @risk.created_by.nil? %></td>
     </tr>
 
     <tr>
       <th>Probability:</th>
       <td><%= @risk.probability %></td>
       <th>Assigned to:</th>
-      <td><%= @risk.assigned_to %></td>
+      <td><%= User.find(@risk.assigned_to).name unless @risk.assigned_to.nil? %></td>
     </tr>
 
     <tr>
