@@ -4,6 +4,42 @@ class Risk < ActiveRecord::Base
   PROJECT = 0
   ORGANIZATIONAL = 1
 
+  #SOURCE
+  ORGANIZATIONAL_ENVIRONMENT = 0
+  USER = 1
+  REQUIREMENTS = 2
+  PROJECT_COMPLEXITY = 3
+  PLANNING_AND_CONTROL = 4
+  TEAM = 5
+
+  #CATEGORY
+  ## ORGANIZATIONAL_ENVIRONMENT
+  ORGANIZATIONAL_POLICY = 0
+  ORGANIZATIONAL_SUPPORT = 1
+  ENVIRONMENT = 2
+  ## USER
+  USER_INVOLVEMENT = 3
+  USER_USER = 4
+  ## REQUIREMENTS
+  FUNCTIONAL_REQUIREMENTS = 5
+  NON_FUNCTIONAL_REQUIREMENTS = 6
+  REQUIREMENTS_REQUIREMENTS = 7
+  ## PROJECT_COMPLEXITY
+  USED_TECHNOLOGY = 8
+  PROCESSES = 9
+  ## PLANNING_AND_CONTROL
+  CHRONOGRAM = 10
+  BUDGET = 11
+  MILESTONES = 12
+  ESTIMATED_DURATION = 13
+  MANAGERS = 14
+  ## TEAM
+  TEAM_INSUFFICIENCY = 15
+  KNOWLEDGE = 16
+  COOPERATION = 17
+  MOTIVATION = 18
+  COMMUNICATION = 19
+
   #STATUS
   OPEN = 0
   CLOSED = 1
@@ -26,7 +62,73 @@ class Risk < ActiveRecord::Base
       when ORGANIZATIONAL
         I18n.t('risk.origin.organizational')
       else
-        'error'
+        ''
+    end
+  end
+
+  def to_source
+    case source
+      when ORGANIZATIONAL_ENVIRONMENT
+        I18n.t('risk.source.organizational_environment')
+      when USER
+        I18n.t('risk.source.user')
+      when REQUIREMENTS
+        I18n.t('risk.source.requirements')
+      when PROJECT_COMPLEXITY
+        I18n.t('risk.source.project_complexity')
+      when PLANNING_AND_CONTROL
+        I18n.t('risk.source.planning_and_control')
+      when TEAM
+        I18n.t('risk.source.team')
+      else
+        ''
+    end
+  end
+
+  def to_category
+    case category
+      when ORGANIZATIONAL_POLICY
+        I18n.t('risk.category.organizational_policy')
+      when ORGANIZATIONAL_SUPPORT
+        I18n.t('risk.category.organizational_support')
+      when ENVIRONMENT
+        I18n.t('risk.category.environment')
+      when USER_INVOLVEMENT
+        I18n.t('risk.category.user_involvement')
+      when USER_USER
+        I18n.t('risk.category.user_user')
+      when FUNCTIONAL_REQUIREMENTS
+        I18n.t('risk.category.functional_requirements')
+      when NON_FUNCTIONAL_REQUIREMENTS
+        I18n.t('risk.category.non_functional_requirements')
+      when REQUIREMENTS_REQUIREMENTS
+        I18n.t('risk.category.requirements_requirements')
+      when USED_TECHNOLOGY
+        I18n.t('risk.category.used_technology')
+      when PROCESSES
+        I18n.t('risk.category.processes')
+      when CHRONOGRAM
+        I18n.t('risk.category.chronogram')
+      when BUDGET
+        I18n.t('risk.category.budget')
+      when MILESTONES
+        I18n.t('risk.category.milestones')
+      when ESTIMATED_DURATION
+        I18n.t('risk.category.estimated_duration')
+      when MANAGERS
+        I18n.t('risk.category.managers')
+      when TEAM_INSUFFICIENCY
+        I18n.t('risk.category.team_insufficiency')
+      when KNOWLEDGE
+        I18n.t('risk.category.knowledge')
+      when COOPERATION
+        I18n.t('risk.category.cooperation')
+      when MOTIVATION
+        I18n.t('risk.category.motivation')
+      when COMMUNICATION
+        I18n.t('risk.category.communication')
+      else
+        ''
     end
   end
 
@@ -47,7 +149,7 @@ class Risk < ActiveRecord::Base
       when RESOLVED
         I18n.t('risk.status.resolved')
       else
-        'error'
+        ''
     end
   end
 
@@ -62,7 +164,40 @@ class Risk < ActiveRecord::Base
       when ACCEPT
         I18n.t('risk.strategy.accept')
       else
-        'error'
+        ''
+    end
+  end
+
+  def self.get_category_by_source(source_id)
+    case source_id
+      when ORGANIZATIONAL_ENVIRONMENT
+        [[I18n.t('risk.category.organizational_policy'), ORGANIZATIONAL_POLICY],
+         [I18n.t('risk.category.organizational_support'), ORGANIZATIONAL_SUPPORT],
+         [I18n.t('risk.category.environment'), ENVIRONMENT]]
+      when USER
+        [[I18n.t('risk.category.user_involvement'), USER_INVOLVEMENT],
+         [I18n.t('risk.category.user_user'), USER_USER]]
+      when REQUIREMENTS
+        [[I18n.t('risk.category.functional_requirements'), FUNCTIONAL_REQUIREMENTS],
+         [I18n.t('risk.category.non_functional_requirements'), NON_FUNCTIONAL_REQUIREMENTS],
+         [I18n.t('risk.category.requirements_requirements'), REQUIREMENTS_REQUIREMENTS]]
+      when PROJECT_COMPLEXITY
+        [[I18n.t('risk.category.used_technology'), USED_TECHNOLOGY],
+         [I18n.t('risk.category.processes'), PROCESSES]]
+      when PLANNING_AND_CONTROL
+        [[I18n.t('risk.category.chronogram'), CHRONOGRAM],
+         [I18n.t('risk.category.budget'), BUDGET],
+         [I18n.t('risk.category.milestones'), MILESTONES],
+         [I18n.t('risk.category.estimated_duration'), ESTIMATED_DURATION],
+         [I18n.t('risk.category.managers'), MANAGERS]]
+      when TEAM
+        [[I18n.t('risk.category.team_insufficiency'), TEAM_INSUFFICIENCY],
+         [I18n.t('risk.category.knowledge'), KNOWLEDGE],
+         [I18n.t('risk.category.cooperation'), COOPERATION],
+         [I18n.t('risk.category.motivation'), MOTIVATION],
+         [I18n.t('risk.category.communication'), COMMUNICATION]]
+      else
+        []
     end
   end
 

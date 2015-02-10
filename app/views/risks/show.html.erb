@@ -38,14 +38,14 @@
 
     <tr>
       <th>Source:</th>
-      <td><%= @risk.source %></td>
+      <td><%= @risk.to_source %></td>
       <th>Identification date:</th>
       <td><%= @risk.identification_date %></td>
     </tr>
 
     <tr>
       <th>Category:</th>
-      <td><%= @risk.category %></td>
+      <td><%= @risk.to_category %></td>
       <th>Created by:</th>
       <td><%= User.find(@risk.created_by).name unless @risk.created_by.nil? %></td>
     </tr>

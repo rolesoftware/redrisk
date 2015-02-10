@@ -1,5 +1,5 @@
 class RisksController < ApplicationController
-  before_filter :find_optional_project
+  before_filter :find_optional_project, except: [:get_category_by_source]
 
   def index
     @risks = Risk.all
@@ -32,6 +32,7 @@ class RisksController < ApplicationController
 
   def edit
     @risk = Risk.find(params[:risk_id])
+    @risk_categories = Risk.get_category_by_source(@risk.source)
   end
 
   def create
@@ -69,6 +70,10 @@ class RisksController < ApplicationController
       format.html { redirect_to risks_url }
       format.json { head :no_content }
     end
+  end
+
+  def get_category_by_source
+    render json: Risk.get_category_by_source(params[:source_id].to_i)
   end
 
   def find_optional_project

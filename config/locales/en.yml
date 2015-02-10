@@ -4,6 +4,34 @@ en:
     origin:
       project: Project
       organizational: Organizational
+    source:
+      organizational_environment: Organizational environment
+      user: User
+      requirements: Requirements
+      project_complexity: Project complexity
+      planning_and_control: Planning and control
+      team: Team
+    category:
+      organizational_policy: Organizational policy
+      organizational_support: Organizational support
+      environment: Environment
+      user_involvement: User involvement
+      user_user: User
+      functional_requirements: Functional requirements
+      non_functional_requirements: Non functional requirements
+      requirements_requirements: Requirements
+      used_technology: Used technology
+      processes: Processes
+      chronogram: Chronogram
+      budget: Budget
+      milestones: Milestones
+      estimated_duration: Estimated duration
+      managers: Managers
+      team_insufficiency: Team insufficiency
+      knowledge: Knowledge
+      cooperation: Cooperation
+      motivation: Motivation
+      communication: Communication
     status:
       open: Open
       closed: Closed

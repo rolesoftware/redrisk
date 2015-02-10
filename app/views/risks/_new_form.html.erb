@@ -1,3 +1,4 @@
+<%= render 'header' %>
 <div class='box tabular new_issue'>
   <%= form_for(@risk, url: create_risk_path) do |f| %>
       <% if @risk.errors.any? %>
@@ -43,11 +44,11 @@
       <div class="splitcontentleft">
         <p>
           <%= f.label :source %>
-          <%= f.number_field :source %>
+          <%= f.select(:source, options_for_select(options_for_source, @risk.source), id: 'risk_source', prompt: t('.select_one_source')) %>
         </p>
         <p>
           <%= f.label :category %>
-          <%= f.number_field :category %>
+          <%= f.select(:category, '', id: 'risk_category', prompt: t('.select_one_category')) %>
         </p>
         <p>
           <%= f.label :probability %>
