@@ -76,6 +76,10 @@ class RisksController < ApplicationController
     render json: Risk.get_category_by_source(params[:source_id].to_i)
   end
 
+  def get_priority_by_probability_and_impact
+    render json: Risk.get_priority_by_probability_and_impact(params[:probability_id].to_i, params[:impact_id].to_i)
+  end
+
   def find_optional_project
     return true unless params[:id]
     @project = Project.find(params[:id])

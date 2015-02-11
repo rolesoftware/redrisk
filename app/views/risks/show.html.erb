@@ -52,21 +52,21 @@
 
     <tr>
       <th>Probability:</th>
-      <td><%= @risk.probability %></td>
+      <td><%= @risk.to_probability %></td>
       <th>Assigned to:</th>
       <td><%= User.find(@risk.assigned_to).name unless @risk.assigned_to.nil? %></td>
     </tr>
 
     <tr>
       <th>Impact:</th>
-      <td><%= @risk.impact %></td>
+      <td><%= @risk.to_impact %></td>
       <th>Strategy:</th>
       <td><%= @risk.to_strategy %></td>
     </tr>
 
     <tr>
       <th>Priority:</th>
-      <td><%= @risk.priority %></td>
+      <td><%= @risk.to_priority %></td>
     </tr>
 
     <tr>

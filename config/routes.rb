@@ -12,6 +12,7 @@ put 'projects/:id/risks/:risk_id', to: 'risks#update', as: :update_risk
 delete 'projects/:id/risks/:risk_id', to: 'risks#destroy', as: :destroy_risk
 
 get 'risks/get_category_by_source/:source_id', to: 'risks#get_category_by_source'
+get 'risks/get_priority_by_probability_and_impact/probability/:probability_id/impact/:impact_id', to: 'risks#get_priority_by_probability_and_impact'
 
 get 'projects/:id/risks/action_plans', to: 'action_plans#index', as: :action_plans
 post 'projects/:id/risks/:risk_id/action_plans', to: 'action_plans#create', as: :create_action_plan

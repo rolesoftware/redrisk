@@ -1,8 +1,15 @@
 class Risk < ActiveRecord::Base
-
+require 'matrix'
   #ORIGIN
   PROJECT = 0
   ORGANIZATIONAL = 1
+
+  # PROBABILITY, IMPACT, PRIORITY
+  VERY_LOW = 0
+  LOW = 1
+  MEDIUM = 2
+  HIGH = 3
+  VERY_HIGH = 4
 
   #SOURCE
   ORGANIZATIONAL_ENVIRONMENT = 0
@@ -61,6 +68,57 @@ class Risk < ActiveRecord::Base
         I18n.t('risk.origin.project')
       when ORGANIZATIONAL
         I18n.t('risk.origin.organizational')
+      else
+        ''
+    end
+  end
+
+  def to_probability
+    case probability
+      when VERY_LOW
+        I18n.t('risk.probability.very_low')
+      when LOW
+        I18n.t('risk.probability.low')
+      when MEDIUM
+        I18n.t('risk.probability.medium')
+      when HIGH
+        I18n.t('risk.probability.high')
+      when VERY_HIGH
+        I18n.t('risk.probability.very_high')
+      else
+        ''
+    end
+  end
+
+  def to_impact
+    case impact
+      when VERY_LOW
+        I18n.t('risk.impact.very_low')
+      when LOW
+        I18n.t('risk.impact.low')
+      when MEDIUM
+        I18n.t('risk.impact.medium')
+      when HIGH
+        I18n.t('risk.impact.high')
+      when VERY_HIGH
+        I18n.t('risk.impact.very_high')
+      else
+        ''
+    end
+  end
+
+  def to_priority
+    case priority
+      when VERY_LOW
+        I18n.t('risk.priority.very_low')
+      when LOW
+        I18n.t('risk.priority.low')
+      when MEDIUM
+        I18n.t('risk.priority.medium')
+      when HIGH
+        I18n.t('risk.priority.high')
+      when VERY_HIGH
+        I18n.t('risk.priority.very_high')
       else
         ''
     end
@@ -199,6 +257,32 @@ class Risk < ActiveRecord::Base
       else
         []
     end
+  end
+
+  def self.get_priority_by_probability_and_impact(probability_id, impact_id)
+
+    priority_matrix = Matrix[ [VERY_LOW, VERY_LOW, LOW, MEDIUM, MEDIUM],
+                              [VERY_LOW, LOW, MEDIUM, MEDIUM, HIGH],
+                              [VERY_LOW, LOW, MEDIUM, HIGH, HIGH],
+                              [LOW, MEDIUM, HIGH, HIGH, VERY_HIGH],
+                              [LOW, HIGH, VERY_HIGH, VERY_HIGH, VERY_HIGH]]
+
+    priority = priority_matrix[probability_id, impact_id]
+    case priority
+      when VERY_LOW
+        [I18n.t('risk.priority.very_low'), VERY_LOW]
+      when LOW
+        [I18n.t('risk.priority.low'), LOW]
+      when MEDIUM
+        [I18n.t('risk.priority.medium'), MEDIUM]
+      when HIGH
+        [I18n.t('risk.priority.high'), HIGH]
+      when VERY_HIGH
+        [I18n.t('risk.priority.very_high'), VERY_HIGH]
+      else
+        []
+    end
+
   end
 
 end

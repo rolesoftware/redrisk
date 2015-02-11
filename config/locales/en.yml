@@ -4,6 +4,24 @@ en:
     origin:
       project: Project
       organizational: Organizational
+    probability:
+      very_low: Very low
+      low: Low
+      medium: Medium
+      high: High
+      very_high: Very high
+    impact:
+      very_low: Very low
+      low: Low
+      medium: Medium
+      high: High
+      very_high: Very high
+    priority:
+      very_low: Very low
+      low: Low
+      medium: Medium
+      high: High
+      very_high: Very high
     source:
       organizational_environment: Organizational environment
       user: User

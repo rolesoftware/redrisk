@@ -52,15 +52,16 @@
         </p>
         <p>
           <%= f.label :probability %>
-          <%= f.number_field :probability %>
+          <%= f.select(:probability, options_for_select(options_for_probability, @risk.probability), id: 'risk_probability', prompt: t('.select_one_probability')) %>
         </p>
         <p>
           <%= f.label :impact %>
-          <%= f.number_field :impact %>
+          <%= f.select(:impact, options_for_select(options_for_impact, @risk.impact), id: 'risk_impact', prompt: t('.select_one_impact')) %>
         </p>
         <p>
           <%= f.label :priority %>
-          <%= f.number_field :priority %>
+          <%= text_field_tag '', @risk.to_priority, id: 'risk_priority', readonly: true %>
+          <%= f.hidden_field :priority, value: @risk.priority, id: 'risk_priority_value' %>
         </p>
       </div>
       <div class="splitcontentright">

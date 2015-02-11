@@ -5,6 +5,22 @@ module RisksHelper
      [t('risk.origin.organizational'),	Risk::ORGANIZATIONAL]]
   end
 
+  def options_for_probability
+    [[t('risk.probability.very_low'), Risk::VERY_LOW],
+     [t('risk.probability.low'), Risk::LOW],
+     [t('risk.probability.medium'), Risk::MEDIUM],
+     [t('risk.probability.high'), Risk::HIGH],
+     [t('risk.probability.very_high'), Risk::VERY_HIGH]]
+  end
+
+  def options_for_impact
+    [[t('risk.impact.very_low'), Risk::VERY_LOW],
+     [t('risk.impact.low'), Risk::LOW],
+     [t('risk.impact.medium'), Risk::MEDIUM],
+     [t('risk.impact.high'), Risk::HIGH],
+     [t('risk.impact.very_high'), Risk::VERY_HIGH]]
+  end
+
   def options_for_source
     [[t('risk.source.organizational_environment'), Risk::ORGANIZATIONAL_ENVIRONMENT],
      [t('risk.source.user'), Risk::USER],
