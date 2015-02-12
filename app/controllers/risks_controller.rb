@@ -36,6 +36,7 @@ class RisksController < ApplicationController
   end
 
   def create
+    params[:risk][:cost] = RedRiskUtil.convert_money_to_float(params[:risk][:cost])
     @risk = Risk.new(params[:risk])
 
     respond_to do |format|
@@ -50,6 +51,7 @@ class RisksController < ApplicationController
   end
 
   def update
+    params[:risk][:cost] = RedRiskUtil.convert_money_to_float(params[:risk][:cost])
     @risk = Risk.find(params[:risk_id])
     respond_to do |format|
       if @risk.update_attributes(params[:risk])

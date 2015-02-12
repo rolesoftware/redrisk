@@ -28,7 +28,7 @@
       <th>Origin:</th>
       <td><%= @risk.to_origin %></td>
       <th>Cost:</th>
-      <td><%= @risk.cost %></td>
+      <td><%= number_to_currency @risk.cost %></td>
     </tr>
 
     <tr>

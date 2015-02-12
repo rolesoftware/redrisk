@@ -34,7 +34,7 @@
         </p>
         <p>
           <%= f.label :cost %>
-          <%= f.text_field :cost %>
+          <%= f.text_field :cost, value: number_to_currency(@risk.cost), class: 'money_field' %>
         </p>
       </div>
       <p>
