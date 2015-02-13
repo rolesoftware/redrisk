@@ -44,7 +44,7 @@ class ActionPlansController < ApplicationController
   # POST /action_plans.json
   def create
     @action_plan = ActionPlan.new(params[:action_plan])
-
+    @action_plan.risk_id = params[:risk_id]
     respond_to do |format|
       if @action_plan.save
         format.html { redirect_to show_action_plan_url(action_plan_id: @action_plan.id), notice: 'Action plan was successfully created.' }

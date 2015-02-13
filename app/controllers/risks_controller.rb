@@ -2,8 +2,8 @@ class RisksController < ApplicationController
   before_filter :find_optional_project, except: [:get_category_by_source]
 
   def index
-    @risks = Risk.all
-    @action_plans = ActionPlan.all
+    @risks = Risk.where(project_identifier: @project.identifier)
+    @action_plans = ActionPlan.joins(:risk).where('risks.project_identifier = ?',  @project.identifier)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class RisksController < ApplicationController
 
   def show
     @risk = Risk.find(params[:risk_id])
-    @action_plans = ActionPlan.all
+    @action_plans = @risk.action_plans
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,7 +38,7 @@ class RisksController < ApplicationController
   def create
     params[:risk][:cost] = RedRiskUtil.convert_money_to_float(params[:risk][:cost])
     @risk = Risk.new(params[:risk])
-
+    @risk.project_identifier = @project.identifier
     respond_to do |format|
       if @risk.save
         format.html { redirect_to show_risk_path(risk_id: @risk.id), notice: 'Risk was successfully created.' }

@@ -1,5 +1,7 @@
 class Risk < ActiveRecord::Base
 require 'matrix'
+has_many :action_plans
+
   #ORIGIN
   PROJECT = 0
   ORGANIZATIONAL = 1
