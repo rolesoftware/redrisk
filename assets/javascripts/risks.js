@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
 
     function get_categories_by_source(){
         var selected_source = $('#risk_source').val();
@@ -36,4 +36,6 @@ $(function () {
     $('#risk_source').change(get_categories_by_source);
     $('#risk_probability').change(get_priority_by_probability_and_impact);
     $('#risk_impact').change(get_priority_by_probability_and_impact);
+
+    $(".money_field").maskMoney({prefix: '$ ', thousands: '.', decimal: ',', affixesStay: true});
 });
