@@ -18,7 +18,7 @@
 
 <p>
   <b>Kind:</b>
-  <%= @action_plan.kind %>
+  <%= @action_plan.to_kind %>
 </p>
 
 <p>
@@ -28,7 +28,7 @@
 
 <p>
   <b>Assigned to:</b>
-  <%= @action_plan.assigned_to %>
+  <%= User.find(@action_plan.assigned_to).name unless @action_plan.assigned_to.nil? %>
 </p>
 
 <p>
