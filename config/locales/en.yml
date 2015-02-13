@@ -63,3 +63,10 @@ en:
       transfer: Transfer
       mitigate: Mitigate
       accept: Accept
+  action_plan:
+    kind:
+      mitigation: Mitigation
+      transference: Transference
+      elimination: Elimination
+      contingency: Contingency
+

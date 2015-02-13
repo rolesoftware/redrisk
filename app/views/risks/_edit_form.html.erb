@@ -67,7 +67,8 @@
       <div class="splitcontentright">
         <p>
           <%= f.label :identification_date %>
-          <%= f.date_select :identification_date %>
+          <%= f.text_field :identification_date %>
+          <%= calendar_for('risk_identification_date') %>
         </p>
         <p>
           <%= f.label :created_by %>

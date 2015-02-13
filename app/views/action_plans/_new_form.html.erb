@@ -24,7 +24,7 @@
       </p>
       <p>
         <%= f.label :kind %>
-        <%= f.number_field :kind %>
+        <%= f.select(:kind, options_for_select(options_for_kind, @action_plan.kind), id: 'risk_kind', prompt: t('.select_one_kind')) %>
       </p>
       <p>
         <%= f.label :description %>
@@ -32,15 +32,17 @@
       </p>
       <p>
         <%= f.label :assigned_to %>
-        <%= f.number_field :assigned_to %>
+        <%= f.collection_select(:assigned_to, User.joins(:members).where("members.project_id = ?", @project.id), :id, :name, prompt: t('.select_one_member') ) %>
       </p>
       <p>
         <%= f.label :term %>
-        <%= f.date_select :term %>
+        <%= f.text_field :term %>
+        <%= calendar_for('action_plan_term') %>
       </p>
       <p>
         <%= f.label :finish_date %>
-        <%= f.date_select :finish_date %>
+        <%= f.text_field :finish_date %>
+        <%= calendar_for('action_plan_finish_date') %>
       </p>
       <p>
         <%= f.label :risk_id %>
