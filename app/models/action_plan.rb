@@ -1,5 +1,7 @@
 class ActionPlan < ActiveRecord::Base
   belongs_to :risk
+  validates :title, presence: true
+  validates :term, :finish_date, date: true
 
   #KIND
   MITIGATION = 0

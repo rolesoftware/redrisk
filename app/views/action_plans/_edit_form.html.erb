@@ -1,17 +1,7 @@
+<%= error_messages_for 'action_plan' %>
+
 <div class='box tabular new_issue'>
   <%= form_for(@action_plan, url: update_action_plan_path(action_plan_id: @action_plan.id)) do |f| %>
-      <% if @action_plan.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@action_plan.errors.count, "error") %> prohibited this action_plan from being saved:</h2>
-
-            <ul>
-              <% @action_plan.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-      <% end %>
-
       <div class="splitcontentright">
         <p>
           <%= f.label :effective %>
@@ -20,7 +10,7 @@
       </div>
       <p>
         <label for="action_plan_title"><%= ActionPlan.human_attribute_name :title %> <span class="required">*</span></label>
-        <%= f.text_field :title, :required => true %>
+        <%= f.text_field :title%>
       </p>
       <p>
         <%= f.label :kind %>
