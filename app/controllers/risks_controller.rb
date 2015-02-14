@@ -6,7 +6,7 @@ class RisksController < ApplicationController
     @action_plans = ActionPlan.joins(:risk).where('risks.project_identifier = ?',  @project.identifier)
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_risk.html.erb
       format.json { render json: @risks }
     end
   end
@@ -16,7 +16,7 @@ class RisksController < ApplicationController
     @action_plans = @risk.action_plans
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # _show_template.html.erb
       format.json { render json: @risk }
     end
   end

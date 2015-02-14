@@ -1,0 +1,4 @@
+<h2>
+  <%= t('risk') %> #<%= params[:risk_id] %> - <%= t('.version') %> <%= @risk.version %> <%= t('changed_on') %>: <%=@risk.updated_at.to_formatted_s(:long) %>
+</h2>
+<%= render partial:'risks/show_template' %>

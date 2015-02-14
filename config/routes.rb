@@ -22,3 +22,6 @@ get 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#show', 
 put 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#update', as: :update_action_plan
 delete 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#destroy', as: :destroy_action_plan
 
+get 'projects/:id/risks/:risk_id/version_histories', to: 'version_histories#index_risk', as: :risk_version_history
+get 'projects/:id/risks/:risk_id/version_histories/:version_id', to: 'version_histories#show_risk', as: :show_risk_version_history
+

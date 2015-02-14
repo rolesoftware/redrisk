@@ -8,7 +8,7 @@ class ActionPlansController < ApplicationController
     @action_plans = ActionPlan.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index_risk.html.erb
       format.json { render json: @action_plans }
     end
   end
@@ -19,7 +19,7 @@ class ActionPlansController < ApplicationController
     @action_plan = ActionPlan.find(params[:action_plan_id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # _show_template.html.erb
       format.json { render json: @action_plan }
     end
   end

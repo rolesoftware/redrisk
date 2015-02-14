@@ -1,0 +1,20 @@
+<div class="contextual">
+  <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
+</div>
+
+<h2><%= t('version_history') %> - <%= t('risk') %> <%= @risk.title %> </h2>
+<div class="autoscroll" >
+  <table class="list issues">
+    <tr>
+      <th>Versão</th>
+      <th>Data de Modificação</th>
+    </tr>
+
+    <% for version in @version_histories.reverse %>
+        <tr class="issue">
+          <td><%= link_to '#' + version.version.to_s, show_risk_version_history_path(version_id: version.version) %></td>
+          <td><%=version.updated_at.to_formatted_s(:long) %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>

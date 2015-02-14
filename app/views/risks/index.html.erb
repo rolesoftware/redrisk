@@ -20,9 +20,9 @@
   <tr>
     <td><%= link_to risk.id, show_risk_path(risk_id: risk.id) %></td>
     <td><%= risk.title %></td>
-    <td><%= risk.status %></td>
+    <td><%= Risk.status_to_text(risk.status) %></td>
     <td><%= risk.identification_date %></td>
-    <td><%= risk.priority %></td>
+    <td><%= Risk.priority_to_text(risk.priority) %></td>
     <td><%= link_to 'Edit', edit_risk_path(risk_id: risk.id), class: 'icon icon-edit' %></td>
     <td><%= link_to 'Destroy', destroy_risk_path(risk_id: risk.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %></td>
   </tr>

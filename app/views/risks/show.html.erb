@@ -2,78 +2,15 @@
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
   <%= link_to t('edit'), edit_risk_path(risk_id: @risk.id), :class => 'icon icon-edit' %>
   <%= link_to t('Destroy'), destroy_risk_path(risk_id: @risk.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %>
+  <%= link_to t('history'), risk_version_history_path, :class => 'icon icon-history' %>
 </div>
 
 <h2>
   <%=t('risk') %> #<%= @risk.id %>
 </h2>
 
+<%= render 'show_template' %>
 <div class="issue">
-  <div class="subject">
-    <h3>Title:
-      <%= @risk.title %>
-    </h3>
-  </div>
-  <br />
-
-  <table class="attributes">
-    <tr>
-      <th>Status:</th>
-      <td><%= @risk.to_status %></td>
-      <th>Effort:</th>
-      <td><%= @risk.effort %></td>
-    </tr>
-
-    <tr>
-      <th>Origin:</th>
-      <td><%= @risk.to_origin %></td>
-      <th>Cost:</th>
-      <td><%= number_to_currency @risk.cost %></td>
-    </tr>
-
-    <tr>
-      <th>Description:</th>
-      <td><%= @risk.description %></td>
-    </tr>
-
-    <tr>
-      <th>Source:</th>
-      <td><%= @risk.to_source %></td>
-      <th>Identification date:</th>
-      <td><%= @risk.identification_date %></td>
-    </tr>
-
-    <tr>
-      <th>Category:</th>
-      <td><%= @risk.to_category %></td>
-      <th>Created by:</th>
-      <td><%= User.find(@risk.created_by).name unless @risk.created_by.nil? %></td>
-    </tr>
-
-    <tr>
-      <th>Probability:</th>
-      <td><%= @risk.to_probability %></td>
-      <th>Assigned to:</th>
-      <td><%= User.find(@risk.assigned_to).name unless @risk.assigned_to.nil? %></td>
-    </tr>
-
-    <tr>
-      <th>Impact:</th>
-      <td><%= @risk.to_impact %></td>
-      <th>Strategy:</th>
-      <td><%= @risk.to_strategy %></td>
-    </tr>
-
-    <tr>
-      <th>Priority:</th>
-      <td><%= @risk.to_priority %></td>
-    </tr>
-
-    <tr>
-      <th>Trigger:</th>
-      <td><%= @risk.trigger %></td>
-    </tr>
-  </table>
   <hr />
 
   <div class="contextual">
@@ -81,5 +18,4 @@
   </div>
 
   <%= render :template => 'action_plans/index' %>
-
 </div>

@@ -52,7 +52,7 @@
         </p>
         <p>
           <%= f.label :priority %>
-          <%= text_field_tag '', @risk.to_priority, id: 'risk_priority', readonly: true %>
+          <%= text_field_tag '', Risk.priority_to_text(@risk.priority), id: 'risk_priority', readonly: true %>
           <%= f.hidden_field :priority, value: @risk.priority, id: 'risk_priority_value' %>
         </p>
       </div>

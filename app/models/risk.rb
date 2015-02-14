@@ -4,6 +4,7 @@ has_many :action_plans
 validates :title, presence: true
 validates :identification_date, date: true
 validates :effort, numericality: true
+acts_as_versioned
 
   #ORIGIN
   PROJECT = 0
@@ -67,7 +68,7 @@ validates :effort, numericality: true
   MITIGATE = 2
   ACCEPT = 3
 
-  def to_origin
+  def self.origin_to_text(origin)
     case origin
       when PROJECT
         I18n.t('risk.origin.project')
@@ -78,7 +79,7 @@ validates :effort, numericality: true
     end
   end
 
-  def to_probability
+  def self.probability_to_text(probability)
     case probability
       when VERY_LOW
         I18n.t('risk.probability.very_low')
@@ -95,7 +96,7 @@ validates :effort, numericality: true
     end
   end
 
-  def to_impact
+  def self.impact_to_text(impact)
     case impact
       when VERY_LOW
         I18n.t('risk.impact.very_low')
@@ -112,7 +113,7 @@ validates :effort, numericality: true
     end
   end
 
-  def to_priority
+  def self.priority_to_text(priority)
     case priority
       when VERY_LOW
         I18n.t('risk.priority.very_low')
@@ -129,7 +130,7 @@ validates :effort, numericality: true
     end
   end
 
-  def to_source
+  def self.source_to_text(source)
     case source
       when ORGANIZATIONAL_ENVIRONMENT
         I18n.t('risk.source.organizational_environment')
@@ -148,7 +149,7 @@ validates :effort, numericality: true
     end
   end
 
-  def to_category
+  def self.category_to_text(category)
     case category
       when ORGANIZATIONAL_POLICY
         I18n.t('risk.category.organizational_policy')
@@ -195,7 +196,7 @@ validates :effort, numericality: true
     end
   end
 
-  def to_status
+  def self.status_to_text(status)
     case status
       when OPEN
         I18n.t('risk.status.open')
@@ -216,7 +217,7 @@ validates :effort, numericality: true
     end
   end
 
-  def to_strategy
+  def self.strategy_to_text(strategy)
     case strategy
       when ELIMINATE
         I18n.t('risk.strategy.eliminate')
