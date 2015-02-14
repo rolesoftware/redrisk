@@ -28,6 +28,7 @@ class ActionPlansController < ApplicationController
   # GET /action_plans/new.json
   def new
     @action_plan = ActionPlan.new
+    @risk = Risk.find(params[:risk_id])
 
     respond_to do |format|
       format.html # new.html.erb

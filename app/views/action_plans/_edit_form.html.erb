@@ -45,8 +45,8 @@
         <%= calendar_for('action_plan_finish_date') %>
       </p>
       <p>
-        <%= f.label :risk_id %>
-        <%= f.number_field :risk_id %>
+        <%= label_tag t('.associated_risk') %>
+        <%= text_field_tag '', @action_plan.risk.title, readonly: true %>
       </p>
       <p>
         <%= f.submit %>
