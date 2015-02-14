@@ -1,22 +1,13 @@
 <%= render 'header' %>
+
+<%= error_messages_for 'risk' %>
+
 <div class='box tabular new_issue'>
   <%= form_for(@risk, url: update_risk_path(risk_id: @risk.id)) do |f| %>
-      <% if @risk.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@risk.errors.count, "error") %> prohibited this risk from being saved:</h2>
-
-            <ul>
-              <% @risk.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-      <% end %>
-
       <div class="splitcontentleft">
         <p>
           <label for="risk_title"><%= Risk.human_attribute_name :title %> <span class="required">*</span></label>
-          <%= f.text_field :title, :required => true %>
+          <%= f.text_field :title%>
         </p>
         <p>
           <%= f.label :status %>
@@ -48,7 +39,8 @@
         </p>
         <p>
           <%= f.label :category %>
-          <%= f.select(:category, options_for_select(@risk_categories , @risk.category), id: 'risk_category', prompt: t('.select_one_category')) %>
+          <% risk_categories = @risk_categories.nil? ? [] : @risk_categories%>
+          <%= f.select(:category, options_for_select(risk_categories , @risk.category), id: 'risk_category', prompt: t('.select_one_category')) %>
         </p>
         <p>
           <%= f.label :probability %>

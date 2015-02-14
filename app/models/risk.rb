@@ -1,6 +1,8 @@
 class Risk < ActiveRecord::Base
 require 'matrix'
 has_many :action_plans
+validates :title, presence: true
+validates :identification_date, date: true
 
   #ORIGIN
   PROJECT = 0
