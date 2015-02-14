@@ -3,6 +3,7 @@ require 'matrix'
 has_many :action_plans
 validates :title, presence: true
 validates :identification_date, date: true
+validates :effort, numericality: true
 
   #ORIGIN
   PROJECT = 0
