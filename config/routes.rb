@@ -25,3 +25,6 @@ delete 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#dest
 get 'projects/:id/risks/:risk_id/version_histories', to: 'version_histories#index_risk', as: :risk_version_history
 get 'projects/:id/risks/:risk_id/version_histories/:version_id', to: 'version_histories#show_risk', as: :show_risk_version_history
 
+get 'projects/:id/risks/action_plans/:action_plan_id/version_histories', to: 'version_histories#index_action_plan', as: :action_plan_version_history
+get 'projects/:id/risks/action_plans/:action_plan_id/version_histories/:version_id', to: 'version_histories#show_action_plan', as: :show_action_plan_version_history
+

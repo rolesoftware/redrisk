@@ -1,0 +1,43 @@
+<div class="issue">
+  <div class="subject">
+    <h3>Title:
+      <%= @action_plan.title %>
+    </h3>
+  </div>
+  <br />
+
+<p>
+  <b>Kind:</b>
+  <%= ActionPlan.kind_to_text(@action_plan.kind) %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @action_plan.description %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%= User.find(@action_plan.assigned_to).name unless @action_plan.assigned_to.nil? %>
+</p>
+
+<p>
+  <b>Term:</b>
+  <%= @action_plan.term %>
+</p>
+
+<p>
+  <b>Finish date:</b>
+  <%= @action_plan.finish_date %>
+</p>
+
+<p>
+  <b>Risk:</b>
+  <%= Risk.find(@action_plan.risk_id).title %>
+</p>
+
+<p>
+  <b>Effective:</b>
+  <%= @action_plan.effective %>
+</p>
+</div>

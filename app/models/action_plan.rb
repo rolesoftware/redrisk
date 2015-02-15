@@ -2,6 +2,7 @@ class ActionPlan < ActiveRecord::Base
   belongs_to :risk
   validates :title, presence: true
   validates :term, :finish_date, date: true
+  acts_as_versioned
 
   #KIND
   MITIGATION = 0
@@ -9,7 +10,7 @@ class ActionPlan < ActiveRecord::Base
   ELIMINATION = 2
   CONTINGENCY = 3
 
-  def to_kind
+  def self.kind_to_text(kind)
     case kind
       when MITIGATION
         I18n.t('action_plan.kind.mitigation')

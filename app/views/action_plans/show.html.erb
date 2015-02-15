@@ -2,52 +2,11 @@
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
   <%= link_to t('edit'), edit_action_plan_path(action_plan_id: @action_plan.id), :class => 'icon icon-edit' %>
   <%= link_to t('Destroy'), destroy_action_plan_path(action_plan_id: @action_plan.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %>
+  <%= link_to t('history'), action_plan_version_history_path, :class => 'icon icon-history' %>
 </div>
 
 <h2>
   <%=t('action_plan') %> #<%= @action_plan.id %>
 </h2>
 
-<div class="issue">
-  <div class="subject">
-    <h3>Title:
-      <%= @action_plan.title %>
-    </h3>
-  </div>
-  <br />
-
-<p>
-  <b>Kind:</b>
-  <%= @action_plan.to_kind %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @action_plan.description %>
-</p>
-
-<p>
-  <b>Assigned to:</b>
-  <%= User.find(@action_plan.assigned_to).name unless @action_plan.assigned_to.nil? %>
-</p>
-
-<p>
-  <b>Term:</b>
-  <%= @action_plan.term %>
-</p>
-
-<p>
-  <b>Finish date:</b>
-  <%= @action_plan.finish_date %>
-</p>
-
-<p>
-  <b>Risk:</b>
-  <%= @action_plan.risk.title %>
-</p>
-
-<p>
-  <b>Effective:</b>
-  <%= @action_plan.effective %>
-</p>
-</div>
+<%= render 'show_template' %>
