@@ -1,0 +1,135 @@
+pt-BR:
+  risk_menu: Riscos
+  new: Novo
+  female_new: Nova
+  edit: Editar
+  destroy: Deletar
+  create: Criar
+  update: Atualizar
+  back: Voltar
+  are_you_sure: Você tem certeza?
+  hours: Horas
+  history: Histórico
+  version_history: Histórico de versões
+  was_successfully_created: criado com sucesso
+  was_successfully_updated: atualizado com sucesso
+  female_was_successfully_created: criada com sucesso
+  female_was_successfully_updated: atualizada com sucesso
+  risk:
+    attributes:
+      title: Título
+      status: Status
+      origin: Origem
+      effort: Esforço
+      cost: Custo
+      description: Descrição
+      source: Fonte
+      category: Categoria
+      probability: Probabilidade
+      impact: Impacto
+      identification_date: Data de identificação
+      priority: Prioridade
+      created_by: Criado por
+      assigned_to: Atribuído para
+      strategy: Estratégia
+      trigger: Gatilho
+    origin:
+      project: Projeto
+      organizational: Organizacional
+    probability:
+      very_low: Muito baixa
+      low: Baixa
+      medium: Média
+      high: Alta
+      very_high: Muito Alta
+    impact:
+      very_low: Muito baixo
+      low: Baixo
+      medium: Médio
+      high: Alto
+      very_high: Muito Alto
+    priority:
+      very_low: Muito baixa
+      low: Baixa
+      medium: Média
+      high: Alta
+      very_high: Muito Alta
+    source:
+      organizational_environment: Ambiente organizacional
+      user: Usuário
+      requirements: Requisitos
+      project_complexity: Complexidade do projeto
+      planning_and_control: Planejamento e controle
+      team: Equipe
+    category:
+      organizational_policy: Política organizacional
+      organizational_support: Suporte organizacional
+      environment: Ambiente
+      user_involvement: Envolvimento do usuário
+      user_user: Usuário
+      functional_requirements: Requisitos funcionais
+      non_functional_requirements: Requisitos não funcionais
+      requirements_requirements: Requisitos
+      used_technology: Tecnologia utilizada
+      processes: Processos
+      chronogram: Cronograma
+      budget: Orçamento
+      milestones: Marcos
+      estimated_duration: Duração estimada
+      managers: Gestores
+      team_insufficiency: Insuficiência de equipe
+      knowledge: Conhecimento
+      cooperation: Cooperação
+      motivation: Motivação
+      communication: Comunicação
+    status:
+      open: Aberto
+      closed: Fechado
+      in_progress: Em andamento
+      suspended: Suspenso
+      canceled: Cancelado
+      rejected: Rejeitado
+      resolved: Resolvido
+    strategy:
+      eliminate: Eliminar
+      transfer: Transferir
+      mitigate: Mitigar
+      accept: Aceitar
+  risks:
+    form:
+      select_one_source: Selecione uma fonte
+      select_one_category: Selecione uma categoria
+      select_one_probability: Selecione uma probabilidade
+      select_one_impact: Selecione um impacto
+      select_one_member: Selecione um membro
+  action_plan:
+    attributes:
+      title: Título
+      effective: Efetiva
+      kind: Tipo
+      description: Descrição
+      assigned_to: Atribuída para
+      term: Prazo
+      finish_date: Data de conclusão
+    kind:
+      mitigation: Mitigação
+      transference: Transferência
+      elimination: Eliminação
+      contingency: Contigência
+  action_plans:
+    form:
+      associated_risk: Risco associado
+      select_one_kind: Selecione um tipo
+      select_one_member: Selecione um membro
+  version_histories:
+    version: Versão
+    modification_date: Data de modificação
+    changed_on: Alterado em
+  activerecord:
+    models:
+      risk:
+        one: Risco
+        other: Riscos
+      action_plan:
+        one: Ação
+        other: Ações
