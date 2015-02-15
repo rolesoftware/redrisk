@@ -1,12 +1,12 @@
 <div class="contextual">
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
   <%= link_to t('edit'), edit_risk_path(risk_id: @risk.id), :class => 'icon icon-edit' %>
-  <%= link_to t('Destroy'), destroy_risk_path(risk_id: @risk.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %>
+  <%= link_to t('destroy'), destroy_risk_path(risk_id: @risk.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'icon icon-del' %>
   <%= link_to t('history'), risk_version_history_path, :class => 'icon icon-history' %>
 </div>
 
 <h2>
-  <%=t('risk') %> #<%= @risk.id %>
+  <%= Risk.model_name.human(count: 1) %> #<%= @risk.id %>
 </h2>
 
 <%= render 'show_template' %>
@@ -14,7 +14,7 @@
   <hr />
 
   <div class="contextual">
-    <%= link_to t('.new_action'), new_action_plan_path(risk_id: @risk.id), :class => 'icon icon-add' %>
+    <%= link_to t('female_new') + ' ' + ActionPlan.model_name.human(count: 1), new_action_plan_path(risk_id: @risk.id), :class => 'icon icon-add' %>
   </div>
 
   <%= render :template => 'action_plans/index' %>

@@ -2,7 +2,7 @@
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
 </div>
 
-<h1>New risk</h1>
+<h1><%= t('new') %> <%= Risk.model_name.human(count: 1) %></h1>
 
 <%= render 'new_form' %>
 

@@ -41,7 +41,7 @@ class RisksController < ApplicationController
     @risk.project_identifier = @project.identifier
     respond_to do |format|
       if @risk.save
-        format.html { redirect_to show_risk_path(risk_id: @risk.id), notice: 'Risk was successfully created.' }
+        format.html { redirect_to show_risk_path(risk_id: @risk.id), notice: Risk.model_name.human(count:1) + ' ' + I18n.t('was_successfully_created') }
         format.json { render json: @risk, status: :created, location: @risk }
       else
         format.html { render action: "new" }
@@ -55,7 +55,7 @@ class RisksController < ApplicationController
     @risk = Risk.find(params[:risk_id])
     respond_to do |format|
       if @risk.update_attributes(params[:risk])
-        format.html { redirect_to show_risk_path(risk_id: @risk.id), notice: 'Risk was successfully updated.' }
+        format.html { redirect_to show_risk_path(risk_id: @risk.id), notice: Risk.model_name.human(count:1) + ' ' + I18n.t('was_successfully_updated') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

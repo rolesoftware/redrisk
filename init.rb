@@ -16,6 +16,6 @@ Redmine::Plugin.register :redrisk do
 
   menu :project_menu,
        :risks, { :controller => 'risks', :action => 'index' },
-       :caption => 'Risks', :after => :activity
+       :caption => :risk_menu, :after => :activity
 
 end

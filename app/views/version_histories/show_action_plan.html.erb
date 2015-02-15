@@ -1,4 +1,4 @@
 <h2>
-  <%= t('action') %> #<%= params[:action_plan_id] %> - <%= t('.version') %> <%= @action_plan.version %> <%= t('changed_on') %>: <%=@action_plan.updated_at.to_formatted_s(:long) %>
+  <%= ActionPlan.model_name.human(count: 1) %> #<%= params[:action_plan_id] %> - <%= t('version_histories.version') %> <%= @action_plan.version %> <%= t('version_histories.changed_on') %>: <%=@action_plan.updated_at.to_formatted_s(:long) %>
 </h2>
 <%= render 'action_plans/show_template' %>

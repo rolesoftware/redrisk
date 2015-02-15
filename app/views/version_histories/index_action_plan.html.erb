@@ -2,12 +2,12 @@
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
 </div>
 
-<h2><%= t('version_history') %> - <%= t('action') %> <%= @action_plan.title %> </h2>
+<h2><%= t('version_history') %> - <%= ActionPlan.model_name.human(count: 1) %>: <%= @action_plan.title %> </h2>
 <div class="autoscroll" >
   <table class="list issues">
     <tr>
-      <th>Versão</th>
-      <th>Data de Modificação</th>
+      <th><%= t('version_histories.version') %></th>
+      <th><%= t('version_histories.modification_date') %></th>
     </tr>
 
     <% for version in @version_histories.reverse %>

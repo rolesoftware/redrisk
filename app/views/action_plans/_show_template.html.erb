@@ -1,43 +1,43 @@
 <div class="issue">
   <div class="subject">
-    <h3>Title:
+    <h3><%= t('action_plan.attributes.title') %>:
       <%= @action_plan.title %>
     </h3>
   </div>
   <br />
 
 <p>
-  <b>Kind:</b>
+  <b><%= t('action_plan.attributes.kind') %>:</b>
   <%= ActionPlan.kind_to_text(@action_plan.kind) %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= t('action_plan.attributes.description') %>:</b>
   <%= @action_plan.description %>
 </p>
 
 <p>
-  <b>Assigned to:</b>
+  <b><%= t('action_plan.attributes.assigned_to') %>:</b>
   <%= User.find(@action_plan.assigned_to).name unless @action_plan.assigned_to.nil? %>
 </p>
 
 <p>
-  <b>Term:</b>
+  <b> <%= t('action_plan.attributes.term') %>:</b>
   <%= @action_plan.term %>
 </p>
 
 <p>
-  <b>Finish date:</b>
+  <b><%= t('action_plan.attributes.finish_date') %>:</b>
   <%= @action_plan.finish_date %>
 </p>
 
 <p>
-  <b>Risk:</b>
+  <b><%= t('action_plans.form.associated_risk') %>:</b>
   <%= Risk.find(@action_plan.risk_id).title %>
 </p>
 
 <p>
-  <b>Effective:</b>
+  <b><%= t('action_plan.attributes.effective') %>:</b>
   <%= @action_plan.effective %>
 </p>
 </div>

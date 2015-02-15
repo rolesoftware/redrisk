@@ -1,6 +1,38 @@
 # English strings go here for Rails i18n
 en:
+  risk_menu: Risks
+  new: New
+  edit: Edit
+  destroy: Destroy
+  create: Create
+  update: Update
+  back: Back
+  are_you_sure: Are you sure?
+  hours: Hours
+  history: History
+  version_history: Version history
+  was_successfully_created: was successfully created
+  was_successfully_updated: was successfully updated
+  female_was_successfully_created: was successfully created
+  female_was_successfully_updated: was successfully updated
   risk:
+    attributes:
+      title: Title
+      status: Status
+      origin: Origin
+      effort: Effort
+      cost: Cost
+      description: Description
+      source: Source
+      category: Category
+      probability: Probability
+      impact: Impact
+      identification_date: Identification date
+      priority: Priority
+      created_by: Created by
+      assigned_to: Assigned to
+      strategy: Strategy
+      trigger: Trigger
     origin:
       project: Project
       organizational: Organizational
@@ -63,10 +95,42 @@ en:
       transfer: Transfer
       mitigate: Mitigate
       accept: Accept
+  risks:
+    form:
+      select_one_source: Select one source
+      select_one_category: Select one category
+      select_one_probability: Select one probability
+      select_one_impact: Select one impact
+      select_one_member: Select one member
   action_plan:
+    attributes:
+      title: Title
+      effective: Effective
+      kind: Kind
+      description: Description
+      assigned_to: Assigned to
+      term: Term
+      finish_date: Finish date
+      risk: Risk
     kind:
       mitigation: Mitigation
       transference: Transference
       elimination: Elimination
       contingency: Contingency
-
+  action_plans:
+    form:
+      associated_risk: Associated risk
+      select_one_kind: Select one kind
+      select_one_member: Select one member
+  version_histories:
+    version: Version
+    modification_date: Modification date
+    changed_on: Changed on
+  activerecord:
+    models:
+      risk:
+        one: Risk
+        other: Risks
+      action_plan:
+        one: Action
+        other: Actions

@@ -1,12 +1,12 @@
 <div class="contextual">
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
   <%= link_to t('edit'), edit_action_plan_path(action_plan_id: @action_plan.id), :class => 'icon icon-edit' %>
-  <%= link_to t('Destroy'), destroy_action_plan_path(action_plan_id: @action_plan.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %>
+  <%= link_to t('destroy'), destroy_action_plan_path(action_plan_id: @action_plan.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon icon-del' %>
   <%= link_to t('history'), action_plan_version_history_path, :class => 'icon icon-history' %>
 </div>
 
 <h2>
-  <%=t('action_plan') %> #<%= @action_plan.id %>
+  <%= ActionPlan.model_name.human(count: 1) %> #<%= @action_plan.id %>
 </h2>
 
 <%= render 'show_template' %>

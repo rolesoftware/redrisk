@@ -2,6 +2,6 @@
   <%= link_to_function t('back'), "history.back()", :class => 'icon icon-reload' %>
 </div>
 
-<h1>Editing action_plan</h1>
+<h1><%= t('edit') %> <%= ActionPlan.model_name.human(count: 1) %></h1>
 
 <%= render 'edit_form' %>
