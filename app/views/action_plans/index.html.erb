@@ -8,7 +8,7 @@
     <th><%= t('action_plan.attributes.assigned_to') %></th>
     <th><%= t('action_plan.attributes.term') %></th>
     <th><%= t('action_plan.attributes.finish_date') %></th>
-    <th><%= t('action_plan.attributes.risk') %></th>
+    <th><%= t('action_plans.form.associated_risk') %></th>
     <th></th>
     <th></th>
   </tr>
@@ -17,7 +17,7 @@
   <tr>
     <td><%= link_to action_plan.id, show_action_plan_path(action_plan_id: action_plan.id) %></td>
     <td><%= action_plan.title %></td>
-    <td><%= action_plan.kind %></td>
+    <td><%= ActionPlan.kind_to_text(action_plan.kind) %></td>
     <td><%= action_plan.assigned_to %></td>
     <td><%= action_plan.term %></td>
     <td><%= action_plan.finish_date %></td>
