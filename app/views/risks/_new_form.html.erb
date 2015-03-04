@@ -35,7 +35,9 @@
       <div class="splitcontentleft">
         <p>
           <%= f.label t('risk.attributes.source') %>
-          <%= f.select(:source, options_for_select(options_for_source, @risk.source), id: 'risk_source', prompt: t('risks.form.select_one_source')) %>
+          <%= f.select(:source, options_for_select(options_for_source, @risk.source), { id: 'risk_source',
+                       prompt: t('risks.form.select_one_source') },
+                       onchange: "get_categories_by_source('#{escape_javascript risks_get_category_by_source_url(source_id: :replace_source)}')" )%>
         </p>
         <p>
           <%= f.label t('risk.attributes.category') %>
@@ -43,11 +45,17 @@
         </p>
         <p>
           <%= f.label t('risk.attributes.probability') %>
-          <%= f.select(:probability, options_for_select(options_for_probability, @risk.probability), id: 'risk_probability', prompt: t('risks.form.select_one_probability')) %>
+          <%= f.select(:probability, options_for_select(options_for_probability, @risk.probability), { id: 'risk_probability',
+                       prompt: t('risks.form.select_one_probability')},
+                       onchange: "get_priority_by_probability_and_impact('#{escape_javascript risks_get_priority_by_probability_and_impact_url(
+                                                                                                      probability_id: :replace_probability, impact_id: :replace_impact)}')") %>
         </p>
         <p>
           <%= f.label t('risk.attributes.impact') %>
-          <%= f.select(:impact, options_for_select(options_for_impact, @risk.impact), id: 'risk_impact', prompt: t('risks.form.select_one_impact')) %>
+          <%= f.select(:impact, options_for_select(options_for_impact, @risk.impact), { id: 'risk_impact',
+                       prompt: t('risks.form.select_one_impact')},
+                       onchange: "get_priority_by_probability_and_impact('#{escape_javascript risks_get_priority_by_probability_and_impact_url(
+                                                                                                      probability_id: :replace_probability, impact_id: :replace_impact)}')") %>
         </p>
         <p>
           <%= f.label t('risk.attributes.priority') %>
