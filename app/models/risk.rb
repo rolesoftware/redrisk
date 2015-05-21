@@ -1,6 +1,7 @@
 class Risk < ActiveRecord::Base
 require 'matrix'
 has_many :action_plans
+attr_accessible :title, :status, :origin, :effort, :cost, :description, :source, :category, :probability, :impact, :priority, :identification_date, :created_by, :assigned_to, :strategy, :trigger
 validates :title, presence: true
 validates :identification_date, date: true
 acts_as_versioned
