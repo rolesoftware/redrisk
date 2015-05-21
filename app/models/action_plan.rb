@@ -1,5 +1,6 @@
 class ActionPlan < ActiveRecord::Base
   belongs_to :risk
+  attr_accessible :effective, :title, :kind, :description, :assigned_to, :term, :finish_date
   validates :title, presence: true
   validates :term, :finish_date, date: true
   acts_as_versioned
