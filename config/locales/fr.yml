@@ -1,0 +1,137 @@
+# French strings go here for Rails i18n
+fr:
+  risk_menu: Risques
+  new: Nouveau
+  female_new: Nouvelle
+  edit: Modifier
+  destroy: Supprimer
+  create: Créer
+  update: Mettre à jour
+  back: Retour
+  are_you_sure: Etes-vous sûr?
+  hours: Heures
+  history: Historique
+  version_history: Historique version
+  was_successfully_created: Crée avec succés
+  was_successfully_updated: Modifié avec succés
+  female_was_successfully_created: Crée avec succés
+  female_was_successfully_updated: Modifié avec succés
+  risk:
+    attributes:
+      title: Titre
+      status: Statut
+      origin: Origine
+      effort: Effort
+      cost: Coût
+      description: Description
+      source: Source
+      category: Catégorie
+      probability: Probabilité
+      impact: Impact
+      identification_date: Date
+      priority: Priorité
+      created_by: Crée par
+      assigned_to: Assigné à
+      strategy: Stratégie
+      trigger: Cause
+    origin:
+      project: Projet
+      organizational: Organisation
+    probability:
+      very_low: Très petite
+      low: Petite
+      medium: Moyenne
+      high: Grande
+      very_high: Très grande
+    impact:
+      very_low: Très petite
+      low: Petite
+      medium: Moyenne
+      high: Grande
+      very_high: Très grande
+    priority:
+      very_low: Très petite
+      low: Petite
+      medium: Moyenne
+      high: Grande
+      very_high: Très grande
+    source:
+      organizational_environment: Organisation environnement
+      user: Utilisateur
+      requirements: Requis
+      project_complexity: Complexité projet
+      planning_and_control: Planning et controle
+      team: Equipe
+    category:
+      organizational_policy: Organisation police
+      organizational_support: Organisation support
+      environment: Environnement
+      user_involvement: Utilisateur impliqué
+      user_user: Utilisateur
+      functional_requirements: Fonctions requises
+      non_functional_requirements: Fonctions non requises
+      requirements_requirements: Requis
+      used_technology: Technologie utilisée
+      processes: Procédés
+      chronogram: Chronogram
+      budget: Budget
+      milestones: Etapes
+      estimated_duration: Durée estimé
+      managers: Managers
+      team_insufficiency: Equipe insuffisante
+      knowledge: Connaissance
+      cooperation: Cooperation
+      motivation: Motivation
+      communication: Communication
+    status:
+      open: Ouvert
+      closed: Fermé
+      in_progress: En progression
+      suspended: Suspendu
+      canceled: Annulé
+      rejected: Rejeté
+      resolved: Resolu
+    strategy:
+      eliminate: Eliminé
+      transfer: Transfert
+      mitigate: Atténuer
+      accept: Accepter
+  risks:
+    form:
+      select_one_source: Selectionner une source
+      select_one_category: Selectionner une catégorie
+      select_one_probability: Selectionner une probabilité
+      select_one_impact: Selectionner un impact
+      select_one_member: Selectionner un membre
+  action_plan:
+    attributes:
+      title: Titre
+      effective: Efficacité
+      kind: Genre
+      description: Description
+      assigned_to: Assigné à
+      term: Termes
+      finish_date: Fin
+      risk: Risques
+    kind:
+      mitigation: Réduction
+      transference: Transfert
+      elimination: Expulsion
+      contingency: Imprévu
+  action_plans:
+    form:
+      associated_risk: Risques associés
+      select_one_kind: Selectionner un genre
+      select_one_member: Selectionner un membre
+  version_histories:
+    version: Version
+    modification_date: Date de remaniement
+    changed_on: Changé le
+  activerecord:
+    models:
+      risk:
+        one: Risque
+        other: Risques
+      action_plan:
+        one: Action
+        other: Actions
