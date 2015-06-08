@@ -8,7 +8,7 @@ post 'projects/:id/risks', to: 'risks#create', as: :create_risk
 get 'projects/:id/risks/new', to: 'risks#new', as: :new_risk
 get 'projects/:id/risks/:risk_id/edit', to: 'risks#edit', as: :edit_risk
 get 'projects/:id/risks/:risk_id', to: 'risks#show', as: :show_risk
-put 'projects/:id/risks/:risk_id', to: 'risks#update', as: :update_risk
+patch 'projects/:id/risks/:risk_id', to: 'risks#update', as: :update_risk
 delete 'projects/:id/risks/:risk_id', to: 'risks#destroy', as: :destroy_risk
 
 get 'risks/get_category_by_source/:source_id', to: 'risks#get_category_by_source', as: :risks_get_category_by_source
@@ -19,7 +19,7 @@ post 'projects/:id/risks/:risk_id/action_plans', to: 'action_plans#create', as: 
 get 'projects/:id/risks/:risk_id/action_plans/new', to: 'action_plans#new', as: :new_action_plan
 get 'projects/:id/risks/action_plans/:action_plan_id/edit', to: 'action_plans#edit', as: :edit_action_plan
 get 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#show', as: :show_action_plan
-put 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#update', as: :update_action_plan
+patch 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#update', as: :update_action_plan
 delete 'projects/:id/risks/action_plans/:action_plan_id', to: 'action_plans#destroy', as: :destroy_action_plan
 
 get 'projects/:id/risks/:risk_id/version_histories', to: 'version_histories#index_risk', as: :risk_version_history
