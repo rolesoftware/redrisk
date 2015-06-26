@@ -18,7 +18,7 @@
     <td><%= link_to action_plan.id, show_action_plan_path(action_plan_id: action_plan.id) %></td>
     <td><%= action_plan.title %></td>
     <td><%= ActionPlan.kind_to_text(action_plan.kind) %></td>
-    <td><%= action_plan.assigned_to %></td>
+    <td><%= User.find(action_plan.assigned_to).name if action_plan.assigned_to.present? and User.find(action_plan.assigned_to).present?%></td>
     <td><%= action_plan.term %></td>
     <td><%= action_plan.finish_date %></td>
     <td><%= action_plan.risk_id %></td>
