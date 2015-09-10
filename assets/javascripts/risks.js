@@ -34,5 +34,5 @@ function get_priority_by_probability_and_impact(url){
 }
 
 $(function() {
-    $(".money_field").maskMoney({prefix: '$ ', thousands: '.', decimal: ',', affixesStay: true});
+    $(".money_field").maskMoney({suffix: $('#money_suffix').val(), prefix: $('#money_prefix').val(), thousands: '.', decimal: ',', affixesStay: true});
 });

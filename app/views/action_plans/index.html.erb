@@ -16,12 +16,12 @@
 <% @action_plans.each do |action_plan| %>
   <tr>
     <td><%= link_to action_plan.id, show_action_plan_path(action_plan_id: action_plan.id) %></td>
-    <td><%= action_plan.title %></td>
+    <td><%= link_to action_plan.title, show_action_plan_path(action_plan_id: action_plan.id) %></td>
     <td><%= ActionPlan.kind_to_text(action_plan.kind) %></td>
-    <td><%= User.find(action_plan.assigned_to).name if action_plan.assigned_to.present? and User.find(action_plan.assigned_to).present?%></td>
+    <td><%= link_to_user(User.find(action_plan.assigned_to)) if action_plan.assigned_to.present? and User.find(action_plan.assigned_to).present?%></td>
     <td><%= action_plan.term %></td>
     <td><%= action_plan.finish_date %></td>
-    <td><%= action_plan.risk_id %></td>
+    <td><%= link_to action_plan.risk.title, show_risk_path(risk_id: action_plan.risk.id) %></td>
     <td><%= link_to t('edit'), edit_action_plan_path(action_plan_id: action_plan.id), class: 'icon icon-edit' %></td>
     <td><%= link_to t('destroy'), destroy_action_plan_path(action_plan_id: action_plan.id), method: :delete, data: { confirm: t('are_you_sure') }, class: 'icon icon-del' %></td>
   </tr>

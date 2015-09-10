@@ -1,0 +1,141 @@
+# Russian strings go here for Rails i18n
+ru:
+  risk_menu: Риски
+  new: Новый
+  female_new: Новое
+  edit: Редактировать
+  destroy: Удалить
+  create: Создать
+  update: Обновить
+  back: Назад
+  are_you_sure: Вы уверены?
+  hours: в часах
+  history: История
+  version_history: История версий
+  was_successfully_created: успешно создан
+  was_successfully_updated: успешно обновлен
+  female_was_successfully_created: успешно создано
+  female_was_successfully_updated: успешно обновлено
+  money_suffix: " руб."
+  money_prefix: 
+  "true": Да
+  "false": Нет
+  risk:
+    attributes:
+      title: Название
+      status: Статус
+      origin: Тип
+      effort: Предполагаемая просрочка
+      cost: Стоимость
+      description: Описание
+      source: Источник риска
+      category: Категория
+      probability: Вероятность
+      impact: Опасность
+      identification_date: Дата обнаружения
+      priority: Приоритет
+      created_by: Создано
+      assigned_to: Назначено
+      strategy: Стратегия
+      trigger: Происхождение
+    origin:
+      project: Проект
+      organizational: Организационный
+    probability:
+      very_low: Очень низкий
+      low: Низкий
+      medium: Средний
+      high: Высокий
+      very_high: Очень высокий
+    impact:
+      very_low: Очень низкий
+      low: Низкий
+      medium: Средний
+      high: Высокий
+      very_high: Очень высокий
+    priority:
+      very_low: Очень низкий
+      low: Низкий
+      medium: Средний
+      high: Высокий
+      very_high: Очень высокий
+    source:
+      organizational_environment: Организационное окружение
+      user: Участник
+      requirements: Требования
+      project_complexity: Сложность проекта
+      planning_and_control: Планирование и контроль
+      team: Команда
+    category:
+      organizational_policy: Организационная политика
+      organizational_support: Организационный контроль
+      environment: Окружение
+      user_involvement: Привлечение участника
+      user_user: Участник
+      functional_requirements: Функциональные требования
+      non_functional_requirements: Нефункциональные требования
+      requirements_requirements: Требования
+      used_technology: Используемая технология
+      processes: Процессы
+      chronogram: Хронограмма
+      budget: Бюджет
+      milestones: Вехи
+      estimated_duration: Запланированная длительность
+      managers: Менеджмент
+      team_insufficiency: Недостаточно ресурсов
+      knowledge: Знания
+      cooperation: Сотрудничество
+      motivation: Мотивация
+      communication: Коммуникация
+    status:
+      open: Открыт
+      closed: Закрыт
+      in_progress: В процессе
+      suspended: В паузе
+      canceled: Отменен
+      rejected: Отклонен
+      resolved: Решен
+    strategy:
+      eliminate: Устранить
+      transfer: Перевести
+      mitigate: Смягчить
+      accept: Принять
+  risks:
+    form:
+      select_one_source: Выберите источник
+      select_one_category: Выберите категорию
+      select_one_probability: Укажите вероятность
+      select_one_impact: Выберите степень опасности
+      select_one_member: Выберите участника
+  action_plan:
+    attributes:
+      title: Название
+      effective: Эффективное действие
+      kind: Тип
+      description: Описание
+      assigned_to: Назначен
+      term: К сроку
+      finish_date: Дата окончания
+      risk: Риск
+    kind:
+      mitigation: Смягчение
+      transference: Перевод
+      elimination: Устранение
+      contingency: Непредвиденное обстоятельство
+  action_plans:
+    form:
+      associated_risk: Ассоциированный риск
+      select_one_kind: Выберите один тип
+      select_one_member: Выберите одного участника
+  version_histories:
+    version: Версия
+    modification_date: Дата изменения
+    changed_on: Изменено
+  activerecord:
+    models:
+      risk:
+        one: Риск
+        other: Риски
+      action_plan:
+        one: Действие
+        other: Действия

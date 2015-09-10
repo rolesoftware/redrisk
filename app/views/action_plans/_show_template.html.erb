@@ -18,7 +18,7 @@
 
 <p>
   <b><%= t('action_plan.attributes.assigned_to') %>:</b>
-  <%= User.find(@action_plan.assigned_to).name unless @action_plan.assigned_to.nil? %>
+  <%= link_to_user(User.find(@action_plan.assigned_to)) unless @action_plan.assigned_to.nil? %>
 </p>
 
 <p>
@@ -33,11 +33,11 @@
 
 <p>
   <b><%= t('action_plans.form.associated_risk') %>:</b>
-  <%= Risk.find(@action_plan.risk_id).title %>
+  <%= link_to Risk.find(@action_plan.risk_id).title, show_risk_path(risk_id: @action_plan.risk.id) %>
 </p>
 
 <p>
   <b><%= t('action_plan.attributes.effective') %>:</b>
-  <%= @action_plan.effective %>
+  <%= t(@action_plan.effective.to_s) %>
 </p>
 </div>
