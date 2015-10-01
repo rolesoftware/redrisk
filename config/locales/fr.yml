@@ -16,6 +16,10 @@ fr:
   was_successfully_updated: Modifié avec succés
   female_was_successfully_created: Crée avec succés
   female_was_successfully_updated: Modifié avec succés
+  money_suffix: ""
+  money_prefix: "$ "
+  "true": Oui
+  "false": Non
   risk:
     attributes:
       title: Titre

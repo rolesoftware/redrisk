@@ -15,6 +15,10 @@ pt-BR:
   was_successfully_updated: atualizado com sucesso
   female_was_successfully_created: criada com sucesso
   female_was_successfully_updated: atualizada com sucesso
+  money_suffix: ""
+  money_prefix: "$ "
+  "true": Sim
+  "false": Nenhuma
   risk:
     attributes:
       title: Título

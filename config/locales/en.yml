@@ -16,6 +16,10 @@ en:
   was_successfully_updated: was successfully updated
   female_was_successfully_created: was successfully created
   female_was_successfully_updated: was successfully updated
+  money_suffix: 
+  money_prefix: "$ "
+  "true": Yes
+  "false": No
   risk:
     attributes:
       title: Title

@@ -2,6 +2,9 @@
 
 <%= error_messages_for 'risk' %>
 
+<input id="money_suffix" type='hidden' value="<%= t('money_suffix') %>">
+<input id="money_prefix" type='hidden' value="<%= t('money_prefix') %>">
+
 <div class='box tabular new_issue'>
   <%= form_for(@risk, url: update_risk_path(risk_id: @risk.id)) do |f| %>
       <div class="splitcontentleft">

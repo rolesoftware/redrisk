@@ -19,7 +19,7 @@
 <% @risks.each do |risk| %>
   <tr>
     <td><%= link_to risk.id, show_risk_path(risk_id: risk.id) %></td>
-    <td><%= risk.title %></td>
+    <td><%= link_to risk.title, show_risk_path(risk_id: risk.id) %></td>
     <td><%= Risk.status_to_text(risk.status) %></td>
     <td><%= risk.identification_date %></td>
     <td><%= Risk.priority_to_text(risk.priority) %></td>

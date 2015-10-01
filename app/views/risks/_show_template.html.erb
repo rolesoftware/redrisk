@@ -37,14 +37,14 @@
       <th><%= t('risk.attributes.category') %>:</th>
       <td><%= Risk.category_to_text(@risk.category) %></td>
       <th><%= t('risk.attributes.created_by') %>:</th>
-      <td><%= User.find(@risk.created_by).name unless @risk.created_by.nil? %></td>
+      <td><%= link_to_user(User.find(@risk.created_by)) unless @risk.created_by.nil? %></td>
     </tr>
 
     <tr>
       <th><%= t('risk.attributes.probability') %>:</th>
       <td><%= Risk.probability_to_text(@risk.probability) %></td>
       <th><%= t('risk.attributes.assigned_to') %>:</th>
-      <td><%= User.find(@risk.assigned_to).name unless @risk.assigned_to.nil? %></td>
+      <td><%= link_to_user(User.find(@risk.assigned_to)) unless @risk.assigned_to.nil? %></td>
     </tr>
 
     <tr>
