@@ -33,7 +33,7 @@
 
 <p>
   <b><%= t('action_plans.form.associated_risk') %>:</b>
-  <%= link_to Risk.find(@action_plan.risk_id).title, show_risk_path(risk_id: @action_plan.risk.id) %>
+  <%= link_to Risk.find(@action_plan.risk_id).title, show_risk_path(risk_id: @action_plan.risk_id) %>
 </p>
 
 <p>
